@@ -1,0 +1,25 @@
+<!--<h3>Parent Components</h3>
+<div>
+  Parent Component
+  <input type="number" #pcomponant (keyup)="0">
+</div>
+<app-child [PData]="pcomponant.value"></app-child>
+-->
+
+
+<!--<<h3>Parent Components</h3>
+<div>
+  Parent Component
+  <input type="number" #pcomponant (keyup)="0">
+</div>
+value of child component is: <b>{{CData}}</b>
+<app-child [PData]="pcomponant.value" (eventChild)="CData=$event"></app-child>
+-->
+
+<h3>Parent Component € to Dt</h3>
+<div>
+  Parent Component €
+  <input type="number" #pcomponant (keyup)="0">
+</div>
+value of child component is: <b>{{CData}}</b>
+<app-child [PData]="pcomponant.value" (eventChild)="CData=$event"></app-child>

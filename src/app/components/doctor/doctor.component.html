@@ -1,0 +1,50 @@
+<h1>Prise de rendez-vous en ligne</h1>
+<label>recherche d'un médecin</label><br>
+<label>Spécialité:</label>
+<select (change)="getNewList('radiologue')">
+
+    <option *ngFor="let s of specialilte"  >{{s}}</option>
+
+</select>
+
+<div *ngFor="let d of newList">
+
+  <table border="1">
+    <tr>
+      <td>
+        name
+      </td>
+      <td>
+        specialite
+      </td>
+      <td>
+        disponibilite
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{d.name}}
+      </td>
+      <td>
+        {{d.specialite}}
+      </td>
+      <td>
+        {{d.disponibilite}}
+      </td>
+      <td>
+        <input type="submit" value="prendre rendez-vous" (click)="onChange(d)" [hidden]=!d.disponibilite>
+      </td>
+    </tr>
+
+  </table>
+</div>
+<div [hidden]="hide">
+{{selectedDoctor.name}}
+  <br>
+  Nom de patient
+  <input type="text" >
+
+  <input type="submit" value="confirmer" (click)="confirmer(selectedDoctor)" [hidden]=!d.disponibilite>
+
+</div>
+

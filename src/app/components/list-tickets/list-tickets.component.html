@@ -1,0 +1,17 @@
+<div [hidden]="hide">
+  <form>
+  <label>Title:</label>
+  <input type="text" name="title" [(ngModel)]="ticket.title"><br>
+  <label>Assigned to:</label>
+  <input type="text" name="assignedTo" [(ngModel)]="ticket.assignedTo">
+  <label>completed %:</label>
+  <input type="number" name="doing" [(ngModel)]="ticket.doing">
+  <label>desc:</label>
+  <input type="text" name="description" [(ngModel)]="ticket.description"><br>
+    <input type="submit" (click)="addTciket(ticket)" value="save">
+  </form>
+</div>
+
+<div *ngFor="let list of listTicket">
+  <app-ticket [t]="list" (newEvent)="delete($event)" ></app-ticket>
+</div>

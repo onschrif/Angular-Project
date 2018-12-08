@@ -1,0 +1,30 @@
+<form #userForm="ngForm">
+  <div class="form-group" >
+  <label>Name:</label>
+  <input class="form-control" minlength="3"  #nom = "ngModel" type="text" required name="nom" [(ngModel)]="user.name"><br>
+  </div>
+  <div [hidden]="nom.valid">
+le nom est obligatoire
+  </div>
+
+  <div class="form-group" >
+    <label>email:</label>
+    <input class="form-control" minlength="3"  #email = "ngModel" type="text" required name="email" [(ngModel)]="user.email"><br>
+  </div>
+  <div [hidden]="email.valid">
+    l'email est obligatoire
+  </div>
+
+  <div class="form-group" >
+    <label>cin:</label>
+    <input class="form-control" pattern="[0-9]{8}" #cin="ngModel" type="text" required name="cin" [(ngModel)]="user.cin"><br>
+  </div>
+  <div [hidden]="cin.valid">
+
+    le cin est obligatoire
+  </div>
+
+  <div>
+    <input type="submit" [disabled]="userForm.invalid" value="ajouter">
+  </div>
+</form>

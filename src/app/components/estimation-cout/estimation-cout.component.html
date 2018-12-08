@@ -1,0 +1,36 @@
+<p>
+  pour.....!
+</p>
+<form #estimaionForm="ngForm">
+  <div class="form-group" >
+    <label>Position:</label>
+    <select class="form-control" #p = "ngModel" required name="position" [(ngModel)]="position">
+      <option>vide</option>
+      <option>haut</option>
+      <option>bas</option>
+    </select>
+  </div>
+  <div [hidden]="p.valid">
+    position est obligatoire
+  </div>
+
+
+<div class="form-group" >
+  <label>Nbr:</label>
+  <input class="form-control" #n = "ngModel" type="number" required name="nbr" [(ngModel)]="nbr"><br>
+</div>
+<div [hidden]="n.valid">
+  nbr est obligatoire
+</div>
+  <div *ngIf="n.value>60">
+    le nbre ne doit pas dépasser 60
+  </div>
+  <div [hidden]="hide">
+    lec cout est {{cout}}
+  </div>
+  <div>
+    <input type="submit" (click)="calculerCout()" [disabled]="estimaionForm.invalid" value="estimer">
+  </div>
+</form>
+
+

@@ -1,0 +1,5 @@
+[ 
+    {"id":"1", "categorie":"Soirées d'Entreprise", "lieux":"restaurant Angelina", "description":"bal masqué"},
+    {"id":"2", "categorie":"Séminaires d'Entreprise", "lieux":"salle des conférences 1", "description":"formation sécurité informatique"}, 
+    {"id":"3", "categorie":"Lancement de Produits ", "lieux":"salle des conférences 2", "description":"nouvelle application mobile" } 
+]

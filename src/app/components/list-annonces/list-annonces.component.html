@@ -1,0 +1,20 @@
+<div *ngFor="let annonce of listAnnonces;let i = index">
+  <li *ngIf="annonce.etat=='confirmé'" [ngStyle]="{'background-color':'green'}">
+
+    {{annonce.description}}
+    {{annonce.etat}}
+    {{annonce.position}}
+    {{annonce.titre}}
+
+  </li>
+  <li *ngIf="annonce.etat=='en attente'" [ngStyle]="{'background-color':'orange'}">
+
+    {{annonce.description}}
+    {{annonce.etat}}
+    {{annonce.position}}
+    {{annonce.titre}}
+
+  </li>
+
+</div>
+

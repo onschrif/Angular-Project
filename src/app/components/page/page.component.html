@@ -1,0 +1,11 @@
+<div *ngFor="let article of listeArticles, let i = index ">
+
+<fieldset *ngIf="i < nbArticles">
+  <legend>{{article.titre}}</legend>
+  {{article.contenu}}
+<ul>
+  <li>auteur: {{article.auteur}}</li>
+  <li>date: {{article.date}}</li>
+</ul>
+</fieldset>
+</div>

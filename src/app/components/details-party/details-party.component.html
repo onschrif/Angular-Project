@@ -1,0 +1,38 @@
+<form>
+<fieldset *ngIf="party.nb_place>0" >
+  <div *ngIf="party.nb_place<=40" [ngStyle]="{'background-color':'orange'}">
+    <legend>{{party.title}}</legend>
+    <label>Date:</label>{{party.date}}
+    <label>Type:</label>{{party.type}}<br>
+    <label>Nombre de places:</label>{{party.nb_place}}<br>
+    <label>Nombre de places disponible:</label>{{nb_rest}}<br>
+    <label>Description:</label>{{party.description}}
+  </div>
+  <div *ngIf="party.nb_place>40">
+    <div *ngIf="party.nb_place<=100" [ngStyle]="{'background-color':'green'}">
+      <legend>{{party.title}}</legend>
+      <label>Date:</label>{{party.date}}
+      <label>Type:</label>{{party.type}}<br>
+      <label>Nombre de places:</label>{{party.nb_place}}<br>
+      <label>Nombre de places disponible:</label>{{nb_rest}}<br>
+      <label>Description:</label>{{party.description}}
+    </div>
+  </div>
+
+
+    <div *ngIf="party.nb_place>100" [ngStyle]="{'background-color':'yellow'}">
+      <legend>{{party.title}}</legend>
+      <label>Date:</label>{{party.date}}
+      <label>Type:</label>{{party.type}}<br>
+      <label>Nombre de places:</label>{{party.nb_place}}<br>
+      <label>Nombre de places disponible:</label>{{nb_rest}}<br>
+      <label>Description:</label>{{party.description}}
+    </div>
+<input type="submit" (click)="onChange()" value="Réserver">
+<div [hidden]="hide">
+<label>Nmbre de place a réserver</label><br>
+  <input type="text" name="nbr" [(ngModel)]="dec"><br>
+  <input type="submit" value="Valider" (click)="sendToParent()">
+</div>
+</fieldset>
+</form>

@@ -1,0 +1,6 @@
+{{t.title}} {{t.assignedTo}}<br>
+<div [hidden]="details">
+  id:{{t.id}}<br>assignedTo:{{t.doing}} <br>desc:{{t.description}}
+</div>
+<input type="submit"  value="cancel" (click)="sendToParent(t)">
+<input type="button"  value="Details" (click)="showDetails()">

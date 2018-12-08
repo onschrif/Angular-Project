@@ -1,0 +1,19 @@
+<form>
+<button (click)="calcul('action')">Calcul</button><br>
+ le nbre de film action:<label>{{ count }}</label><br>
+  le nbre total des films non action:<label>{{ countNonAction }}</label><br>
+</form>
+  <ul *ngFor="let list of listFilms;let i = index">
+  <li *ngIf="list.categorie=='action'" [ngStyle]="{'color':list.duree=='2 heures' ?'blue':'red','font-size.px':list.duree== '2 heures'? '24':''}">
+
+        {{list.nom}}-{{list.duree}}-{{list.categorie}}
+
+  </li>
+  </ul>
+  *******************************************************
+  <ul *ngFor="let list of listFilms;let i = index">
+  <li *ngIf="list.categorie!='action'" [hidden]="list.categorie=='comic'" [ngStyle]="{'color':list.duree=='2 heures' ?'blue':'red','font-size.px':list.duree== '2 heures'? '24':''}">
+      {{list.nom}}-{{list.duree}}-{{list.categorie}}
+  </li>
+  </ul>
+

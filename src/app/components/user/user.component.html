@@ -1,0 +1,32 @@
+<p>
+  User: {{name}} <br>
+  Email: {{email}}<br>
+  address: {{address}} <br>
+</p>
+<button (click)="toggleHobbies()">{{showHobbies? 'hide hobbies':'show hobbies' }}</button>
+<div *ngIf="showHobbies">
+<b>Hobbies</b>
+  <ul>
+    <li *ngFor="let hobby of hobbies;let i = index">
+      {{hobby}}
+      <button (click)="delete(i)">X</button>
+    </li>
+  </ul>
+  <form (ngSubmit)="addHobby(hobby.value)">
+    Add hobby
+    <input type="text" #hobby>
+  </form>
+</div>
+<hr>
+<h2>Edit User</h2>
+<form>
+  <label>Name:</label>
+  <input type=""text name="nom" [(ngModel)]="name"><br>
+  Email:
+  <input type=""text name="email" [(ngModel)]="email"><br>
+  address:
+  <input type=""text name="address" [(ngModel)]="address">
+</form>
+
+
+

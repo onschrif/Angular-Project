@@ -1,0 +1,4 @@
+<h1>Welcome to JetSet magazine!</h1>
+<div *ngFor="let p of pariesList">
+  <app-details-party [party] = "p" [nb_rest] = "p.nb_place" (newEvent)="decriment($event)"></app-details-party>
+</div>

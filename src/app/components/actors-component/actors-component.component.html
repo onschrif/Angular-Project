@@ -1,0 +1,9 @@
+<div *ngFor="let list of listActors">
+  <app-actor-component [actor]="list" (favEvent)="addToFav($event)" (newEvent)="delete($event) "></app-actor-component>
+</div>
+<button type="submit" (click)="showFav()">{{status? 'hide fav':'show fav' }}</button>
+<div *ngIf="status">
+  <ul *ngFor="let list of favList;let i = index">
+    {{list.firstName}}  {{list.lastName}}
+  </ul>
+</div>
